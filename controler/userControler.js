@@ -48,7 +48,7 @@ const updateProfile = async (req, res) => {
 const getCurrentUser = async (req, res) => {
 
     try {
-        const users = await userModal.findOne();
+        const users = await userModal.find();
         if (!users) {
             return res.json({
                 success: false,
