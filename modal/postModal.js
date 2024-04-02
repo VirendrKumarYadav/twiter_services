@@ -24,8 +24,14 @@ const postSchema = new mongoose.Schema({
         type:[mongoose.Schema.Types.ObjectId],
         required:false,
         default:[]
+    },
+    dislike:{
+        type:[mongoose.Schema.Types.ObjectId],
+        required:false,
+        default:[]
     }
    
 });
+
 
 module.exports = mongoose.model("posts", postSchema);
