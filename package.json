@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "jsdoc -c jsdoc.json"
   },
   "author": "virendra",
   "license": "ISC",
@@ -16,5 +17,8 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.2.4"
+  },
+  "devDependencies": {
+    "jsdoc": "^4.0.2"
   }
 }

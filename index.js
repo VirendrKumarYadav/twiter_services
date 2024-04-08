@@ -6,7 +6,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const userRoute = require("./router/userRoute")
 const postRoute = require("./router/postRouter")
-
+const auth=require("./auth/auth")
 
 if (process.env.SERVER == "LOCAL") {
     mongoose
@@ -28,10 +28,10 @@ if (process.env.SERVER == "LOCAL") {
             console.log("Database Connected Failed ", err);
         });
 }
-
+ 
 app.use(express.json());
-app.use("/app/v1/", userRoute);
-app.use("/app/v1/", postRoute);
+app.use("/app/v1/",auth(["admin"]), userRoute);
+app.use("/app/v1/",auth(["admin"]), postRoute);
 
 
 app.listen(process.env.PORT, () => {
